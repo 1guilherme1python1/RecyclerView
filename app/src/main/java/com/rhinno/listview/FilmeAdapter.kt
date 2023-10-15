@@ -1,5 +1,6 @@
 package com.rhinno.listview
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -13,18 +14,32 @@ class FilmeAdapter(
     inner class FilmeViewHolder(
         val itemView : View
     ): ViewHolder(itemView){
-        val textView : TextView = itemView.findViewById(R.id.textViewFilme)
+        val textViewFilme : TextView = itemView.findViewById(R.id.textViewFilme)
     }
 
+    //retornar layout criado pela ViewHolder ja inflado em uma view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilmeViewHolder {
-        TODO("Not yet implemented")
+        // preparo para inflar , ou seja, converter um arquivo XML em uma hierarquia de elementos de interface
+        val layoutInflater = LayoutInflater.from(parent.context)
+
+        //preparo a item view
+        val itemView = layoutInflater.inflate(
+            R.layout.item_lista_filme,
+            parent,
+            false
+        )
+
+        return FilmeViewHolder(itemView)
     }
 
+    //Qauntidade de itens da lista
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return lista.size
     }
 
     override fun onBindViewHolder(holder: FilmeViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val filme = lista[position]
+
+        holder.textViewFilme.text = filme.nome
     }
 }

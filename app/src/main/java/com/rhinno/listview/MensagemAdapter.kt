@@ -27,6 +27,10 @@ class MensagemAdapter(
     //usada posterriormente para criar o ViewHolder associado a esse item.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MensagemViewHolder {
 
+        // A linha de código que cria uma instância de LayoutInflater a partir do contexto
+        // do parent serve para preparar o LayoutInflater para inflar (converter) um layout XML
+        // em uma hierarquia de elementos de interface do usuário (Views) no contexto específico
+        // do parent
         val layoutInflater = LayoutInflater.from(
             parent.context
         )
@@ -56,12 +60,13 @@ class MensagemAdapter(
 
     }
 
-    // recupera a quantidade de itens
+    // recupera a quantidade de itens da lista
     override fun getItemCount(): Int {
         return lista.size
     }
 
-    // ao vincular os dados para vinculacao
+    // Metodo que recebe o ViewHolder e a posicao da lista, aqui e recuperado o objeto da lista
+    // de objetos pela posicao e associado a viewHolder
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
 
         val mensagem = lista[position]
