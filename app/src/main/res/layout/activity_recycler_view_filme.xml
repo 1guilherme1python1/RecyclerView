@@ -21,11 +21,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
 
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="2"
 
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
 
-        tools:listitem="@layout/item_lista_filme"
-        tools:itemCount="10"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                tools:listitem="@layout/item_lista_filme"
+                tools:itemCount="10"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"&ndash;&gt;-->
+<!--    android:orientation="horizontal"-->
+
+
+<!-- Grid Layout -->
+<!--    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--    android:orientation="horizontal"-->
+<!--    app:spanCount="2"-->
